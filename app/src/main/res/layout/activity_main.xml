@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    tools:context=".MainActivity"
+    android:background="#ffff431f"
+    android:onClick="restartCounter">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="DRAGON"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/abc_text_size_display_3_material"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello there!"
+        android:id="@+id/statusMessage"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff"/>
+
+    <TextView
+        android:id="@+id/dados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="45dp"
+        android:text="Values"
+        android:textColor="#ffffffff"
+        android:textSize="40sp" />
+
+
+    <TextView
+        android:id="@+id/Value2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dados"
+        android:layout_alignStart="@+id/dados"
+        android:layout_below="@+id/dados"
+        android:layout_marginTop="37dp"
+        android:text="Value2"
+        android:textColor="#ffffffff"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/Value3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/dados"
+        android:layout_alignBottom="@+id/dados"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="Value3"
+        android:textColor="#ffffffff"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/Value4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Value2"
+        android:layout_alignBottom="@+id/Value2"
+        android:layout_alignLeft="@+id/Value3"
+        android:layout_alignStart="@+id/Value3"
+        android:text="Value4"
+        android:textColor="#ffffffff"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/Value5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Value2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Value5"
+        android:textColor="#ffffffff"
+        android:textSize="40sp" />
+
+</RelativeLayout>
