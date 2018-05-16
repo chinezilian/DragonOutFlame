@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:background="#ffff431f"
+    tools:context="com.example.tj.dragonoutflame.secondActivity">
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="190dip"
+        android:layout_height="140dip"
+        android:layout_alignLeft="@+id/graph4"
+        android:layout_alignStart="@+id/graph4"
+        android:layout_alignTop="@+id/graph3" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph2"
+        android:layout_width="190dip"
+        android:layout_height="140dip"
+        android:layout_alignEnd="@+id/graph3"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/graph3" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph3"
+        android:layout_width="190dip"
+        android:layout_height="140dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="25dp" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph4"
+        android:layout_width="190dip"
+        android:layout_height="140dip"
+        android:layout_alignTop="@+id/graph5"
+        android:layout_centerHorizontal="true" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph5"
+        android:layout_width="190dip"
+        android:layout_height="140dip"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/graph2" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph6"
+        android:layout_width="190dip"
+        android:layout_height="140dip"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/graph3" />
+
+
+</RelativeLayout>

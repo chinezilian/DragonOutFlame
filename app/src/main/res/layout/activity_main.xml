@@ -10,20 +10,20 @@
     android:paddingBottom="4dp"
     tools:context=".MainActivity"
     android:background="#ffff431f"
-    android:onClick="restartCounter">
+    android:onClick="startSecondActivity">
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="19dp"
         android:text="DRAGON"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffffff"
-        android:textSize="@dimen/abc_text_size_display_3_material"
-        android:id="@+id/textView" />
+        android:textSize="@dimen/abc_text_size_display_3_material" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,67 +35,79 @@
         android:textColor="#ffffffff"/>
 
     <TextView
-        android:id="@+id/dados"
+        android:id="@+id/Value1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="45dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_centerHorizontal="true"
         android:text="Values"
         android:textColor="#ffffffff"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
 
     <TextView
         android:id="@+id/Value2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/dados"
-        android:layout_alignStart="@+id/dados"
-        android:layout_below="@+id/dados"
-        android:layout_marginTop="37dp"
+        android:layout_alignLeft="@+id/Value3"
+        android:layout_alignStart="@+id/Value3"
+        android:layout_centerVertical="true"
         android:text="Value2"
         android:textColor="#ffffffff"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/Value3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/dados"
-        android:layout_alignBottom="@+id/dados"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+
+
+        android:layout_above="@+id/statusMessage"
+        android:layout_alignLeft="@+id/Value1"
+        android:layout_alignStart="@+id/Value1"
+        android:layout_marginBottom="115dp"
         android:text="Value3"
         android:textColor="#ffffffff"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/Value4"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="53dp"
+        android:text="LAT:"
+        android:textColor="#ffffffff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         android:layout_alignBaseline="@+id/Value2"
         android:layout_alignBottom="@+id/Value2"
-        android:layout_alignLeft="@+id/Value3"
-        android:layout_alignStart="@+id/Value3"
-        android:text="Value4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:text="LON:"
         android:textColor="#ffffffff"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/Value5"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Value2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:text="Value5"
+        android:layout_alignBaseline="@+id/Value3"
+        android:layout_alignBottom="@+id/Value3"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:text="TEMP:"
         android:textColor="#ffffffff"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
+
 
 </RelativeLayout>

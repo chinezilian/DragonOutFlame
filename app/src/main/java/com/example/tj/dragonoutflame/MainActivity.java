@@ -2,18 +2,28 @@ package com.example.tj.dragonoutflame;
 
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.regex.Pattern;
+
 
 public class MainActivity extends Activity {
 
@@ -23,11 +33,10 @@ public class MainActivity extends Activity {
         connect é a thread de gerenciamento da conexão Bluetooth
      */
     static TextView statusMessage;
-    static TextView dados;
+    static TextView Value1;
     static TextView Value2;
     static TextView Value3;
-    static TextView Value4;
-    static TextView Value5;
+
     ConnectionThread connect;
 
     @Override
@@ -37,20 +46,14 @@ public class MainActivity extends Activity {
 
         /* Link entre os elementos da interface gráfica e suas
             representações em Java.
-         */
+*/
         statusMessage = (TextView) findViewById(R.id.statusMessage);
-        dados = (TextView) findViewById(R.id.dados);
+        Value1 = (TextView) findViewById(R.id.Value1);
         Value2 = (TextView) findViewById(R.id.Value2);
         Value3 = (TextView) findViewById(R.id.Value3);
-        Value4 = (TextView) findViewById(R.id.Value4);
-        Value5 = (TextView) findViewById(R.id.Value5);
 
-        /* Teste rápido. O hardware Bluetooth do dispositivo Android
-            está funcionando ou está bugado de forma misteriosa?
-            Será que existe, pelo menos? Provavelmente existe.
+         /*Teste rápido.
          */
-
-
 
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter == null) {
@@ -84,7 +87,6 @@ public class MainActivity extends Activity {
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -107,8 +109,6 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    // String string1;
     public static Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -144,7 +144,6 @@ public class MainActivity extends Activity {
         }
     };
 
-
    /* public void startSecondActivity(View view) {
 
         Intent secondActivity = new Intent(this, MainActivityB.class);
@@ -155,72 +154,92 @@ public class MainActivity extends Activity {
 /* Esse método é invocado sempre que o usuário clicar na TextView
         que contem o contador. O app Android transmite a string "restart",
         seguido de uma quebra de linha, que é o indicador de fim de mensagem.
-*/
+        static double[] elem = new double[12];
+*/static double elem1,elem2,elem3,elem4,elem5,elem6,elem7,elem8,elem9,elem10,elem11,elem12;
    public static void check(String data) {
        int startIndex,endIndex;
        startIndex=0;
        endIndex=data.indexOf(";");
        if (endIndex<0) return;
-      /* String[] date=data.split("$");
-       if (date[0]!= "acc") return;
-       if (date[2]!= "gps") return;
-       data=date[1];*/
-       String[] date1=data.split(";");
-       int total = 0; // Numero de posições preenchidas
-       for(int i=0;i<=date1.length-1;i++){
-           if(date1[i] != null)total++;
-            }
-       System.out.println(total);
-            // extrai o primeiro elemento
-           double elem1 = Double.parseDouble(data.substring(startIndex, endIndex));
-           System.out.println(elem1);
-           // extrai o segundo elemento
-           startIndex = endIndex + 1;
-           endIndex = data.indexOf(";", startIndex);
-           double elem2 = Double.parseDouble(data.substring(startIndex, endIndex));
-           System.out.println(elem2);
-           // extrai o terceiro elemento
-           startIndex = endIndex + 1;
-           endIndex = data.indexOf(";", startIndex);
-           double elem3 = Double.parseDouble(data.substring(startIndex, endIndex));
-           System.out.println(elem3);
-           // extrai o quarto elemento
-           startIndex = endIndex + 1;
-           endIndex = data.indexOf(";", startIndex);
-           double elem4 = Double.parseDouble(data.substring(startIndex, endIndex));
-           System.out.println(elem4);
-           // extrai o quinto e último elemento
+       // extrai o primeiro elemento
+       elem1 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem1);
+       // extrai o segundo elemento
        startIndex = endIndex + 1;
        endIndex = data.indexOf(";", startIndex);
-       double elem5 = Double.parseDouble(data.substring(startIndex, endIndex));
-       System.out.println(elem5);;
-       // extrai o quinto e último elemento
-       startIndex = endIndex + 1;
-       endIndex = data.indexOf(";", startIndex);
-       double elem6 = Double.parseDouble(data.substring(startIndex, endIndex));
-       System.out.println(elem6);
+       elem2 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem2);
        // extrai o terceiro elemento
        startIndex = endIndex + 1;
        endIndex = data.indexOf(";", startIndex);
-       double elem7 = Double.parseDouble(data.substring(startIndex, endIndex));
-       System.out.println(elem7);
+       elem3 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem3);
+       // extrai o quarto elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem4 = Double.parseDouble(data.substring(startIndex, endIndex));
+           System.out.println(elem4);
+           // extrai o quinto e último elemento
+           startIndex = endIndex + 1;
+           endIndex = data.indexOf(";", startIndex);
+           elem5 = Double.parseDouble(data.substring(startIndex, endIndex));
+           System.out.println(elem5);;
+            // extrai o quinto e último elemento
+            startIndex = endIndex + 1;
+            endIndex = data.indexOf(";", startIndex);
+             elem6 = Double.parseDouble(data.substring(startIndex, endIndex));
+             System.out.println(elem6);
+            // extrai o terceiro elemento
+            startIndex = endIndex + 1;
+            endIndex = data.indexOf(";", startIndex);
+                  elem7 = Double.parseDouble(data.substring(startIndex, endIndex));
+             System.out.println(elem7);
+             // extrai o terceiro elemento
+               startIndex = endIndex + 1;
+            endIndex = data.indexOf(";", startIndex);
+            elem8 = Double.parseDouble(data.substring(startIndex, endIndex));
+            System.out.println(elem8);
+            // extrai o terceiro elemento
+            startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem9 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem9);
+       // extrai o terceiro elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem10 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem10);
+       // extrai o terceiro elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem11 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem11);
        // extrai o quinto e último elemento
        startIndex=endIndex+1;
-       double elem8=Double.parseDouble(data.substring(startIndex));
-       System.out.println(elem8);
+       elem12=Double.parseDouble(data.substring(startIndex));
+       System.out.println(elem12);
 
-       dados.setText(""+elem1);
-       Value2.setText(""+elem2);
-       Value3.setText(""+elem3);
-       Value4.setText(""+elem7);
-      Value5.setText(""+elem8);
+       seting();
 
    }
+    public static void seting(){
+
+        Value1.setText(""+elem7);
+        Value2.setText(""+elem8);
+        Value3.setText(""+elem9);
+    }
 
 
     public void restartCounter(View view) {
 
         connect.write("restart\n".getBytes());
+    }
+
+
+    public void startSecondActivity(View view) {
+
+        Intent secondActivity = new Intent(this, secondActivity.class);
+        startActivity(secondActivity);
     }
 
 }
