@@ -9,6 +9,9 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
 import static com.example.tj.dragonoutflame.MainActivity.elem1;
+import static com.example.tj.dragonoutflame.MainActivity.elem10;
+import static com.example.tj.dragonoutflame.MainActivity.elem11;
+import static com.example.tj.dragonoutflame.MainActivity.elem12;
 import static com.example.tj.dragonoutflame.MainActivity.elem2;
 import static com.example.tj.dragonoutflame.MainActivity.elem3;
 import static com.example.tj.dragonoutflame.MainActivity.elem4;
@@ -21,8 +24,9 @@ import static com.example.tj.dragonoutflame.MainActivity.elem9;
 public class secondActivity extends AppCompatActivity {
 
     private LineGraphSeries<DataPoint> series, series1, series2, series3, series4, series5;
+    private LineGraphSeries<DataPoint> series6, series7, series8;
     private final Handler mHandler = new Handler();
-    private Runnable mTimer, mTimer1, mTimer2, mTimer3, mTimer4, mTimer5;
+    private Runnable mTimer, mTimer1, mTimer2, mTimer3, mTimer4, mTimer5, mTimer6;
     private double graphLastXValue = 5d;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,10 @@ public class secondActivity extends AppCompatActivity {
         series = new LineGraphSeries<>();
         series.setDrawDataPoints(true);
         series.setDrawBackground(true);
+        graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        graph.getViewport().setScrollableY(true); // enables vertical scrolling
+        graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+        graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series);
     }
     public void initGraph2(GraphView graph) {
@@ -63,7 +71,13 @@ public class secondActivity extends AppCompatActivity {
         series1 = new LineGraphSeries<>();
         series1.setDrawDataPoints(true);
         series1.setDrawBackground(true);
+        series6 = new LineGraphSeries<>();
+        graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        graph.getViewport().setScrollableY(true); // enables vertical scrolling
+        graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+        graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series1);
+        graph.addSeries(series6);
     }
     public void initGraph3(GraphView graph) {
         graph.getViewport().setXAxisBoundsManual(true);
@@ -74,6 +88,10 @@ public class secondActivity extends AppCompatActivity {
         series2 = new LineGraphSeries<>();
         series2.setDrawDataPoints(true);
         series2.setDrawBackground(true);
+        graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        graph.getViewport().setScrollableY(true); // enables vertical scrolling
+        graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+        graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series2);
     }
     public void initGraph4(GraphView graph) {
@@ -85,7 +103,13 @@ public class secondActivity extends AppCompatActivity {
         series3 = new LineGraphSeries<>();
         series3.setDrawDataPoints(true);
         series3.setDrawBackground(true);
+        series7 = new LineGraphSeries<>();
+        graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        graph.getViewport().setScrollableY(true); // enables vertical scrolling
+        graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+        graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series3);
+        graph.addSeries(series7);
     }
     public void initGraph5(GraphView graph) {
         graph.getViewport().setXAxisBoundsManual(true);
@@ -96,7 +120,13 @@ public class secondActivity extends AppCompatActivity {
         series4 = new LineGraphSeries<>();
         series4.setDrawDataPoints(true);
         series4.setDrawBackground(true);
+        series8 = new LineGraphSeries<>();
+        graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        graph.getViewport().setScrollableY(true); // enables vertical scrolling
+        graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+        graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series4);
+        graph.addSeries(series8);
     }
     public void initGraph6(GraphView graph) {
         graph.getViewport().setXAxisBoundsManual(true);
@@ -107,6 +137,10 @@ public class secondActivity extends AppCompatActivity {
         series5 = new LineGraphSeries<>();
         series5.setDrawDataPoints(true);
         series5.setDrawBackground(true);
+        graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        graph.getViewport().setScrollableY(true); // enables vertical scrolling
+        graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+        graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series5);
     }
 
@@ -116,7 +150,7 @@ public class secondActivity extends AppCompatActivity {
             @Override
             public void run() {
                 graphLastXValue += 0.25d;
-                series.appendData(new DataPoint(graphLastXValue, elem5), true, 22);
+                series.appendData(new DataPoint(graphLastXValue, elem11), true, 22);
                 mHandler.postDelayed(this, 330);
             }
         };
@@ -126,6 +160,7 @@ public class secondActivity extends AppCompatActivity {
             public void run() {
                 graphLastXValue += 0.25d;
                 series1.appendData(new DataPoint(graphLastXValue, elem1), true, 22);
+                series6.appendData(new DataPoint(graphLastXValue, elem4), true, 22);
                 mHandler.postDelayed(this, 330);
             }
         };
@@ -134,7 +169,7 @@ public class secondActivity extends AppCompatActivity {
             @Override
             public void run() {
                 graphLastXValue += 0.25d;
-                series2.appendData(new DataPoint(graphLastXValue, elem4), true, 22);
+                series2.appendData(new DataPoint(graphLastXValue, elem10), true, 22);
                 mHandler.postDelayed(this, 330);
             }
         };
@@ -144,6 +179,7 @@ public class secondActivity extends AppCompatActivity {
             public void run() {
                 graphLastXValue += 0.25d;
                 series3.appendData(new DataPoint(graphLastXValue, elem2), true, 22);
+                series7.appendData(new DataPoint(graphLastXValue, elem5), true, 22);
                 mHandler.postDelayed(this, 330);
             }
         };
@@ -153,6 +189,7 @@ public class secondActivity extends AppCompatActivity {
             public void run() {
                 graphLastXValue += 0.25d;
                 series4.appendData(new DataPoint(graphLastXValue, elem3), true, 22);
+                series8.appendData(new DataPoint(graphLastXValue, elem6), true, 22);
                 mHandler.postDelayed(this, 330);
             }
         };
@@ -161,11 +198,20 @@ public class secondActivity extends AppCompatActivity {
             @Override
             public void run() {
                 graphLastXValue += 0.25d;
-                series5.appendData(new DataPoint(graphLastXValue, elem6), true, 22);
+                series5.appendData(new DataPoint(graphLastXValue, elem12), true, 22);
                 mHandler.postDelayed(this, 330);
             }
         };
         mHandler.postDelayed(mTimer5, 1500);
+       /* mTimer6 = new Runnable() {
+            @Override
+            public void run() {
+                graphLastXValue += 0.25d;
+                series6.appendData(new DataPoint(graphLastXValue, elem10), true, 22);
+                mHandler.postDelayed(this, 330);
+            }
+        };
+        mHandler.postDelayed(mTimer6, 1500);*/
     }
 
 
@@ -177,5 +223,7 @@ public class secondActivity extends AppCompatActivity {
         mHandler.removeCallbacks(mTimer3);
         mHandler.removeCallbacks(mTimer4);
         mHandler.removeCallbacks(mTimer5);
+      //  mHandler.removeCallbacks(mTimer6);
     }
+
 }

@@ -155,7 +155,7 @@ public class MainActivity extends Activity {
         que contem o contador. O app Android transmite a string "restart",
         seguido de uma quebra de linha, que é o indicador de fim de mensagem.
         static double[] elem = new double[12];
-*/static double elem1,elem2,elem3,elem4,elem5,elem6,elem7,elem8,elem9,elem10,elem11,elem12;
+*/static double elem1,elem2,elem3,elem4,elem5,elem6,elem7,elem8,elem9,elem10,elem11,elem12,elem13,elem14,elem15;
    public static void check(String data) {
        int startIndex,endIndex;
        startIndex=0;
@@ -178,29 +178,29 @@ public class MainActivity extends Activity {
        startIndex = endIndex + 1;
        endIndex = data.indexOf(";", startIndex);
        elem4 = Double.parseDouble(data.substring(startIndex, endIndex));
-           System.out.println(elem4);
-           // extrai o quinto e último elemento
-           startIndex = endIndex + 1;
-           endIndex = data.indexOf(";", startIndex);
-           elem5 = Double.parseDouble(data.substring(startIndex, endIndex));
-           System.out.println(elem5);;
-            // extrai o quinto e último elemento
-            startIndex = endIndex + 1;
-            endIndex = data.indexOf(";", startIndex);
-             elem6 = Double.parseDouble(data.substring(startIndex, endIndex));
-             System.out.println(elem6);
-            // extrai o terceiro elemento
-            startIndex = endIndex + 1;
-            endIndex = data.indexOf(";", startIndex);
-                  elem7 = Double.parseDouble(data.substring(startIndex, endIndex));
-             System.out.println(elem7);
-             // extrai o terceiro elemento
-               startIndex = endIndex + 1;
-            endIndex = data.indexOf(";", startIndex);
-            elem8 = Double.parseDouble(data.substring(startIndex, endIndex));
-            System.out.println(elem8);
-            // extrai o terceiro elemento
-            startIndex = endIndex + 1;
+       System.out.println(elem4);
+       // extrai o quinto e último elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem5 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem5);;
+       // extrai o quinto e último elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem6 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem6);
+       // extrai o terceiro elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem7 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem7);
+       // extrai o terceiro elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem8 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem8);
+       // extrai o terceiro elemento
+       startIndex = endIndex + 1;
        endIndex = data.indexOf(";", startIndex);
        elem9 = Double.parseDouble(data.substring(startIndex, endIndex));
        System.out.println(elem9);
@@ -214,6 +214,21 @@ public class MainActivity extends Activity {
        endIndex = data.indexOf(";", startIndex);
        elem11 = Double.parseDouble(data.substring(startIndex, endIndex));
        System.out.println(elem11);
+       // extrai o terceiro elemento
+      /* startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem12 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem12);
+       // extrai o terceiro elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem13 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem13);
+       // extrai o terceiro elemento
+       startIndex = endIndex + 1;
+       endIndex = data.indexOf(";", startIndex);
+       elem14 = Double.parseDouble(data.substring(startIndex, endIndex));
+       System.out.println(elem14);*/
        // extrai o quinto e último elemento
        startIndex=endIndex+1;
        elem12=Double.parseDouble(data.substring(startIndex));
