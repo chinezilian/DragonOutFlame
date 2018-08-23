@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
-        android:text="DRAGON"
+        android:text="ACCeGPS"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffffff"
         android:textSize="@dimen/abc_text_size_display_3_material" />
@@ -38,8 +38,10 @@
         android:id="@+id/Value1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_centerHorizontal="true"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignEnd="@+id/Value2"
+        android:layout_alignRight="@+id/Value2"
         android:text="Values"
         android:textColor="#ffffffff"
         android:textSize="30sp" />
@@ -62,10 +64,12 @@
         android:layout_height="wrap_content"
 
 
-        android:layout_above="@+id/statusMessage"
-        android:layout_alignLeft="@+id/Value1"
-        android:layout_alignStart="@+id/Value1"
-        android:layout_marginBottom="115dp"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_below="@+id/Value2"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginTop="85dp"
         android:text="Value3"
         android:textColor="#ffffffff"
         android:textSize="30sp" />
